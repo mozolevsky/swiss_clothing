@@ -1,0 +1,19 @@
+
+body {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.page-title {
+  font-size: 60px;
+  color: $light-text;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+@media (max-width: $sm) {
+  .page-title {
+    font-size: 10vw;
+  }
+}

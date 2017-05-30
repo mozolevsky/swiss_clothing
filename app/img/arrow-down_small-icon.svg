@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="fa-angle-down_copia" data-name="fa-angle-down copia" class="cls-1" d="M556,1047.15a0.514,0.514,0,0,0-.12-0.32l-0.6-.69a0.359,0.359,0,0,0-.553,0l-4.727,5.4-4.726-5.4a0.4,0.4,0,0,0-.277-0.13,0.374,0.374,0,0,0-.277.13l-0.6.69a0.514,0.514,0,0,0-.12.32,0.487,0.487,0,0,0,.12.31l5.605,6.4a0.343,0.343,0,0,0,.553,0l5.605-6.4A0.487,0.487,0,0,0,556,1047.15Z" transform="translate(-544 -1046)"/>
+</svg>

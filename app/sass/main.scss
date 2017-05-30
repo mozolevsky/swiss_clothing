@@ -1,20 +1,19 @@
 @import "helpers";
+@import "typografy";
+@import "top";
+@import "header";
+@import "filter";
 
 
 
-
-html {
-  font-size: 10px;
-}
-
-body {
-  font-family: 'Roboto', 'Arial', sans-serif;
-  font-size: 0.9rem;
-}
 
 
 .container {
-  max-width: 1152px;
+  max-width: 1165px;
+  padding: 0 15px;
   margin: 0 auto;
+  height: 100%;
 }
+
+
 

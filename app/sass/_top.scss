@@ -1,0 +1,48 @@
+.top {
+  height: 100vh;
+  background: url('../img/top_bg.jpg') no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.top__text {
+  margin: 0 auto;
+  margin-top: 30vh;
+  text-align: center;
+  width: 65%;
+}
+
+.top__desc {
+  font-size: 20px;
+  color: $light-text;
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.top__arrow {
+  position: absolute;
+  height: 25px;
+  width: 42px;
+  bottom: 6vh;
+  left: 50%;
+  transform: translate(-50%);
+  background: url('../img/arrow-down_big-icon.svg') no-repeat center;
+}
+
+.top__arrow:hover {
+  cursor: pointer;
+}
+
+
+@media (max-width: $sm) {
+  .top__text {
+    margin-top: 20vh;
+    width: 100%;
+  }
+
+  .top__desc {
+    line-height: 1.5rem;
+  }
+}
