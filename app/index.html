@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwissSoft test task</title>
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/main.css">
@@ -9,7 +10,7 @@
 </head>
 <body>
 
-<div class="top">
+<article class="top">
     <div class="container">
         <header class="header">
             <img src="img/logo.png" alt="" class="header__logo">
@@ -24,15 +25,16 @@
                 </div>
             </nav>
         </header>
-        <div class="top__text">
+        <section class="top__text">
             <h1 class="page-title">Our clothing, your comfort</h1>
             <p class="top__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-        <div class="top__arrow"></div>
+        </section>
+        <a data-speed="2000" href="#filter" class="top__arrow scroll"></a>
     </div>
-</div>
-<div class="filter">
+</article>
+
+<section class="filter" id="filter">
     <div class="container filter__models">
         <form class="filter__group">
             <input class="filter__checkbox" id="check1" type="checkbox" name="man" checked>
@@ -46,7 +48,84 @@
         </form>
         <button class="filter__btn">see all prodRobotoucts</button>
     </div>
-</div>
+</section>
+
+<article class="items">
+    <div class="items__wrapper container">
+        <article class="item item_active">
+            <div class="item__select-wrap">
+                <select class="item__select">
+                    <option class="item__option" value="size" selected>Size</option>
+                    <option class="item__option" value="M">M</option>
+                    <option class="item__option" value="L">L</option>
+                </select>
+            </div>
+            <a href="#" class="item__link-img">
+                <img src="img/item1.png" alt="#" class="item__img">
+            </a>
+            <section class="item__details">
+                <a href="#" class="item__title">T-Shirt</a>
+                <span class="item__price">5,00<i class="item__currency">€</i></span>
+            </section>
+        </article>
+        <article class="item">
+            <div class="item__select-wrap">
+                <select class="item__select">
+                    <option class="item__option" value="size" selected>Size</option>
+                    <option class="item__option" value="M">M</option>
+                </select>
+            </div>
+            <a href="#" class="item__link-img">
+                <img src="img/item2.png" alt="#" class="item__img">
+            </a>
+            <section class="item__details">
+                <a href="#" class="item__title">T-Shirt</a>
+                <span class="item__price">5,00<i class="item__currency">€</i></span>
+            </section>
+        </article>
+        <article class="item">
+            <div class="item__select-wrap">
+                <select class="item__select">
+                    <option class="item__option" value="size" selected>Size</option>
+                    <option class="item__option" value="M">M</option>
+                </select>
+            </div>
+            <a href="#" class="item__link-img">
+                <img src="img/item3.png" alt="#" class="item__img">
+            </a>
+            <section class="item__details">
+                <a href="#" class="item__title">T-Shirt</a>
+                <span class="item__price">5,00<i class="item__currency">€</i></span>
+            </section>
+        </article>
+    </div>
+</article>
+
+<article class="twitter">
+    <div class="twitter__wrapper container">
+        <p class="twitter__quote">“ E-commerce psd theme available ”</p>
+    </div>
+</article>
+
+<footer class="footer">
+    <div class="footer__wrapper container">
+        <section class="footer__text">
+            <p class="footer__title">Trekking</p>
+            <p class="footer__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias commodi
+                dolorem eius, esse est eum hic ipsam maiores molestiae nostrum odit perferendis possimus provident
+                quisquam recusandae sequi soluta velit</p>
+        </section>
+        <section class="footer__text footer__text_right">
+            <nav class="footer__nav">
+                <a href="#" class="footer__link">Credits</a>
+                <a href="#" class="footer__link">Privacy</a>
+                <a href="#" class="footer__link">About</a>
+                <a href="#" class="footer__link">Contact</a>
+            </nav>
+            <p class="footer__author">Design by gianluca cosetta</p>
+        </section>
+    </div>
+</footer>
 
 <script src="js/scripts.js"></script>
 </body>

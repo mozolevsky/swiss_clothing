@@ -1,0 +1,26 @@
+.twitter {
+  background-color: $middle-gray-bg;
+}
+
+.twitter__wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 70px;
+}
+
+.twitter__quote {
+  padding-left: 50px;
+  position: relative;
+  font-size: 16px;
+  color: $light-text;
+}
+
+.twitter__quote::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: calc(50% - 12.5px);
+  height: 25px;
+  width: 30px;
+  background: url('../img/twitter_icon.svg') no-repeat center;
+}
