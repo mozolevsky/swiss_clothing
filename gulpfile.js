@@ -18,6 +18,8 @@ gulp.task('sass', function(){
         .pipe(sass())
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(csscomb())
+        .pipe(cssnano())
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.reload({stream: true}))
 });
@@ -37,13 +39,6 @@ gulp.task('scripts', function () {
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('app/js'))
-});
-
-gulp.task('cssMin',  function () {
-    return gulp.src('app/sass/main.css')
-        .pipe(cssnano())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('app/css'))
 });
 
 gulp.task('watch', ['sass', 'scripts', 'browser-sync'], function () {
@@ -73,7 +68,7 @@ gulp.task('img', function () {
         .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('build', ['clean', 'img' , 'sass', 'cssMin', 'scripts'], function (){
+gulp.task('build', ['clean', 'img' , 'sass', 'scripts'], function (){
     var buildCss = gulp.src('app/css/**/*.css')
         .pipe(gulp.dest('dist/css'));
 

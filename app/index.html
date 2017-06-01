@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="testTask">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwissSoft test task</title>
     <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
@@ -30,72 +30,40 @@
             <p class="top__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua.</p>
         </section>
-        <a data-speed="2000" href="#filter" class="top__arrow scroll"></a>
+        <a data-speed="1000" href="#filter" class="top__arrow scroll"></a>
     </div>
 </article>
 
-<section class="filter" id="filter">
+<section class="filter" id="filter" ng-controller="productsCtrl">
     <div class="container filter__models">
         <form class="filter__group">
-            <input class="filter__checkbox" id="check1" type="checkbox" name="man" checked>
+            <input class="filter__checkbox" id="check1" type="checkbox" name="men" ng-model="showCategory.men">
             <label class="filter__label" for="check1">man</label>
 
-            <input class="filter__checkbox" id="check2" type="checkbox" name="women" checked>
+            <input class="filter__checkbox" id="check2" type="checkbox" name="women" ng-model="showCategory.women">
             <label class="filter__label" for="check2">women</label>
 
-            <input class="filter__checkbox" id="check3" type="checkbox" name="childRobotoren">
+            <input class="filter__checkbox" id="check3" type="checkbox" name="childRobotoren" ng-model="showCategory.child">
             <label class="filter__label" for="check3">childRobotoren</label>
         </form>
         <button class="filter__btn">see all prodRobotoucts</button>
     </div>
 </section>
 
-<article class="items">
+<article class="items" ng-controller="productsCtrl">
     <div class="items__wrapper container">
-        <article class="item item_active">
+        <article class="item item_active" ng-repeat="obj in data.items | filter:filterCategory">
             <div class="item__select-wrap">
                 <select class="item__select">
-                    <option class="item__option" value="size" selected>Size</option>
-                    <option class="item__option" value="M">M</option>
-                    <option class="item__option" value="L">L</option>
+                    <option class="item__option" value="size" ng-repeat="sizeName in obj.options">{{sizeName}}</option>
                 </select>
             </div>
             <a href="#" class="item__link-img">
-                <img src="img/item1.png" alt="#" class="item__img">
+                <img src="img/{{obj.img}}.png" alt="#" class="item__img">
             </a>
             <section class="item__details">
-                <a href="#" class="item__title">T-Shirt</a>
-                <span class="item__price">5,00<i class="item__currency">€</i></span>
-            </section>
-        </article>
-        <article class="item">
-            <div class="item__select-wrap">
-                <select class="item__select">
-                    <option class="item__option" value="size" selected>Size</option>
-                    <option class="item__option" value="M">M</option>
-                </select>
-            </div>
-            <a href="#" class="item__link-img">
-                <img src="img/item2.png" alt="#" class="item__img">
-            </a>
-            <section class="item__details">
-                <a href="#" class="item__title">T-Shirt</a>
-                <span class="item__price">5,00<i class="item__currency">€</i></span>
-            </section>
-        </article>
-        <article class="item">
-            <div class="item__select-wrap">
-                <select class="item__select">
-                    <option class="item__option" value="size" selected>Size</option>
-                    <option class="item__option" value="M">M</option>
-                </select>
-            </div>
-            <a href="#" class="item__link-img">
-                <img src="img/item3.png" alt="#" class="item__img">
-            </a>
-            <section class="item__details">
-                <a href="#" class="item__title">T-Shirt</a>
-                <span class="item__price">5,00<i class="item__currency">€</i></span>
+                <a href="#" class="item__title">{{obj.name}}</a>
+                <span class="item__price">{{obj.price}}<i class="item__currency">€</i></span>
             </section>
         </article>
     </div>
@@ -116,11 +84,8 @@
                 quisquam recusandae sequi soluta velit</p>
         </section>
         <section class="footer__text footer__text_right">
-            <nav class="footer__nav">
-                <a href="#" class="footer__link">Credits</a>
-                <a href="#" class="footer__link">Privacy</a>
-                <a href="#" class="footer__link">About</a>
-                <a href="#" class="footer__link">Contact</a>
+            <nav class="footer__nav" ng-controller="menuCtrl">
+                <a href="{{obj.link}}" title="{{obj.title}}" class="footer__link" ng-repeat="obj in data.footerMenu">{{obj.name}}</a>
             </nav>
             <p class="footer__author">Design by gianluca cosetta</p>
         </section>
@@ -128,5 +93,7 @@
 </footer>
 
 <script src="js/scripts.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
