@@ -53,7 +53,15 @@ app.controller('productsCtrl', ['$scope', '$filter', function ($scope, $filter) 
     $scope.showCategory = {
         "men" : true,
         "women" : true,
-        "child": true
+        "child": false
+    };
+
+    $scope.resetFilter = function() {
+        $scope.showCategory = {
+            "men" : true,
+            "women" : true,
+            "child": true
+        };
     };
 
     $scope.$watch('showCategory', function(newValue) {
