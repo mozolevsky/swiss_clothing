@@ -1,6 +1,7 @@
 var app = angular.module("testTask", []);
 
-app.controller('productsCtrl', ['$scope', function ($scope) {
+app.controller('productsCtrl', ['$scope', '$filter', function ($scope, $filter) {
+	var vm = this;
 
 	$scope.data = {
 		"items": [
@@ -49,6 +50,19 @@ app.controller('productsCtrl', ['$scope', function ($scope) {
   	]
 	};
 
+    $scope.newData = { items: []};
+
+	$scope.$watch('showCategory', function(newValue) {
+	 var items = angular.copy($scope.data.items);
+
+	 $scope.newData.items = items.filter(function(obj){
+	 return $scope.filterCategory(obj);
+	 });
+
+	 console.log($scope.newData.items);
+	 }, true);
+
+
     $scope.filterCategory = function(obj) {
         var exportObj = '';
         var catName = [obj.type.toLowerCase()];
@@ -61,9 +75,10 @@ app.controller('productsCtrl', ['$scope', function ($scope) {
         return exportObj;
     };
 
+
 	$scope.showCategory = {
-			"men" : true,
-			"women" : true,
+			"men" : false,
+			"women" : false,
 			"child": false
 	};
 
