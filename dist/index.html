@@ -38,7 +38,7 @@
     <div class="container filter__models">
         <form class="filter__group">
             <input class="filter__checkbox" id="check1" type="checkbox" ng-model="showCategory.men">
-            <label class="filter__label" for="check1">man</label>
+            <label class="filter__label" for="check1" ng-click="changeWord('Child')">man</label>
 
             <input class="filter__checkbox" id="check2" type="checkbox" ng-model="showCategory.women">
             <label class="filter__label" for="check2">women</label>
@@ -52,7 +52,8 @@
 
 <article class="items" ng-controller="productsCtrl">
     <div class="items__wrapper container">
-        <article class="item" ng-repeat="obj in data.items | filter:filterCategory">
+        <div>{{newData.items}}</div>
+        <article class="item" ng-repeat="obj in newData.items">
             <div class="item__select-wrap">
                 <select class="item__select">
                     <option class="item__option" value="size" ng-repeat="sizeName in obj.options">{{sizeName}}</option>
