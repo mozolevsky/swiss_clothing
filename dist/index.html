@@ -33,42 +33,42 @@
         <a data-speed="1000" href="#filter" class="top__arrow scroll"></a>
     </div>
 </article>
+<div ng-controller="productsCtrl as vm">
+    <section class="filter" id="filter">
+        <div class="container filter__models">
+            <form class="filter__group">
+                <input class="filter__checkbox" id="check1" type="checkbox" ng-model="showCategory.men">
+                <label class="filter__label" for="check1">man</label>
 
-<section class="filter" id="filter" ng-controller="productsCtrl">
-    <div class="container filter__models">
-        <form class="filter__group">
-            <input class="filter__checkbox" id="check1" type="checkbox" ng-model="showCategory.men">
-            <label class="filter__label" for="check1" ng-click="changeWord('Child')">man</label>
+                <input class="filter__checkbox" id="check2" type="checkbox" ng-model="showCategory.women">
+                <label class="filter__label" for="check2">women</label>
 
-            <input class="filter__checkbox" id="check2" type="checkbox" ng-model="showCategory.women">
-            <label class="filter__label" for="check2">women</label>
+                <input class="filter__checkbox" id="check3" type="checkbox" ng-model="showCategory.child">
+                <label class="filter__label" for="check3">childRobotoren</label>
+            </form>
+            <button class="filter__btn">see all prodRobotoucts</button>
+        </div>
+    </section>
 
-            <input class="filter__checkbox" id="check3" type="checkbox" ng-model="showCategory.child">
-            <label class="filter__label" for="check3">childRobotoren</label>
-        </form>
-        <button class="filter__btn">see all prodRobotoucts</button>
-    </div>
-</section>
-
-<article class="items" ng-controller="productsCtrl">
-    <div class="items__wrapper container">
-        <div>{{newData.items}}</div>
-        <article class="item" ng-repeat="obj in newData.items">
-            <div class="item__select-wrap">
-                <select class="item__select">
-                    <option class="item__option" value="size" ng-repeat="sizeName in obj.options">{{sizeName}}</option>
-                </select>
-            </div>
-            <a href="#" class="item__link-img">
-                <img src="img/{{obj.img}}.png" alt="#" class="item__img">
-            </a>
-            <section class="item__details">
-                <a href="#" class="item__title">{{obj.name}}</a>
-                <span class="item__price">{{obj.price}}<i class="item__currency">€</i></span>
-            </section>
-        </article>
-    </div>
-</article>
+    <article class="items">
+        <div class="items__wrapper container">
+            <article class="item" ng-repeat="obj in vm.items">
+                <div class="item__select-wrap">
+                    <select class="item__select">
+                        <option class="item__option" value="size" ng-repeat="sizeName in obj.options">{{sizeName}}</option>
+                    </select>
+                </div>
+                <a href="#" class="item__link-img">
+                    <img src="img/{{obj.img}}.png" alt="#" class="item__img">
+                </a>
+                <section class="item__details">
+                    <a href="#" class="item__title">{{obj.name}}</a>
+                    <span class="item__price">{{obj.price}}<i class="item__currency">€</i></span>
+                </section>
+            </article>
+        </div>
+    </article>
+</div>
 
 <article class="twitter">
     <div class="twitter__wrapper container">

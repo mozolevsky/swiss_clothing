@@ -2,7 +2,7 @@ var app = angular.module("testTask", []);
 
 app.controller('productsCtrl', ['$scope', '$filter', function ($scope, $filter) {
     var vm = this;
-    vm.items = []
+    vm.items = [];
     $scope.data = {
         "items": [
             {
