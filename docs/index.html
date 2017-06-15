@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="testTask">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwissSoft test task</title>
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+
+<article class="top">
+    <div class="container">
+        <header class="header">
+            <img src="img/logo.png" alt="" class="header__logo">
+            <nav class="header__nav">
+                <a class="header__nav-link"  href="">Home</a>
+                <a class="header__nav-link"  href="">Products</a>
+                <a class="header__nav-link header__nav-link_cart"  href=""></a>
+                <div class="burger">
+                    <div class="burger__line burger__line_1"></div>
+                    <div class="burger__line  burger__line_2"></div>
+                    <div class="burger__line  burger__line_3"></div>
+                </div>
+            </nav>
+        </header>
+        <section class="top__text">
+            <h1 class="page-title">Our clothing, your comfort</h1>
+            <p class="top__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.</p>
+        </section>
+        <a data-speed="1000" href="#filter" class="top__arrow scroll"></a>
+    </div>
+</article>
+<div ng-controller="productsCtrl as vm">
+    <section class="filter" id="filter">
+        <div class="container filter__models">
+            <form class="filter__group">
+                <input class="filter__checkbox" id="check1" type="checkbox" ng-model="showCategory.men">
+                <label class="filter__label" for="check1">man</label>
+
+                <input class="filter__checkbox" id="check2" type="checkbox" ng-model="showCategory.women">
+                <label class="filter__label" for="check2">women</label>
+
+                <input class="filter__checkbox" id="check3" type="checkbox" ng-model="showCategory.child">
+                <label class="filter__label" for="check3">childRobotoren</label>
+            </form>
+            <button class="filter__btn" ng-click="resetFilter()">see all prodRobotoucts</button>
+        </div>
+    </section>
+
+    <article class="items">
+        <div class="items__wrapper container">
+            <article class="item" ng-repeat="obj in vm.items">
+                <div class="item__select-wrap">
+                    <select class="item__select">
+                        <option class="item__option" value="size" ng-repeat="sizeName in obj.options">{{sizeName}}</option>
+                    </select>
+                </div>
+                <a href="#" class="item__link-img">
+                    <img src="img/{{obj.img}}.png" alt="#" class="item__img">
+                </a>
+                <section class="item__details">
+                    <a href="#" class="item__title">{{obj.name}}</a>
+                    <span class="item__price">{{obj.price}}<i class="item__currency">€</i></span>
+                </section>
+            </article>
+        </div>
+    </article>
+</div>
+
+<article class="twitter">
+    <div class="twitter__wrapper container">
+        <p class="twitter__quote">“ E-commerce psd theme available ”</p>
+    </div>
+</article>
+
+<footer class="footer">
+    <div class="footer__wrapper container">
+        <section class="footer__text">
+            <p class="footer__title">Trekking</p>
+            <p class="footer__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias commodi
+                dolorem eius, esse est eum hic ipsam maiores molestiae nostrum odit perferendis possimus provident
+                quisquam recusandae sequi soluta velit</p>
+        </section>
+        <section class="footer__text footer__text_right">
+            <nav class="footer__nav" ng-controller="menuCtrl">
+                <a href="{{obj.link}}" title="{{obj.title}}" class="footer__link" ng-repeat="obj in data.footerMenu">{{obj.name}}</a>
+            </nav>
+            <p class="footer__author">Design by gianluca cosetta</p>
+        </section>
+    </div>
+</footer>
+
+<script src="js/scripts.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
